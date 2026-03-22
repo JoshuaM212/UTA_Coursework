@@ -1,0 +1,5 @@
+riscv32-unknown-elf-gcc -o flash -march=rv32i -mabi=ilp32 -nostdlib -Tcse4372_riscv.ld flash.s
+objcopy -O ihex flash flash.hex
+hex_intel_to_quartis flash.hex ../cpu_spring_2023/db/ram.hex
+riscv32-unknown-elf-objdump -dr flash
+

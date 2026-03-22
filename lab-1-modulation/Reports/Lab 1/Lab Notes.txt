@@ -1,0 +1,41 @@
+
+
+On step 6: 'Write software to write a voltage pair to the DAC outputs'
+    - Verify if this means powering the DAC via LDAC pin high for both. 
+
+step 1: setting arb generator   
+    - Do to both outputs    
+        ~ utility - output setup - load -50 ohm (on waveform(arbitrary) generator)
+        ~ set 10 kHz, .5V (500 mV) Vpp, and 50 ohm output
+
+step 2-4:
+    - Origninal testing requires two signal cables from the waveform generator to the signal generator
+        - The signal generator connects to the spectrum analyzer via a BNC cable through RF output 
+
+    - Mod (on/off) button causes the signal generator to output varied signals to the
+        - spectrum analyzer - REVIEW THE OUTPUTS LATER
+
+    - No connections leads to a severe dBm drop (-73 dBm) on the spectrum analyzer
+    - Mod off doesn't alter the carrier freq
+    - Sin into Q, Cos into I - Leads to a right shift on carrier freq
+    - Having only one of the two on will lead to a dual band on the spectrum analyzer
+    - Sin into I, Cos into Q - Leads to a left shift on carrier freq
+
+
+
+Baseline for the signal generator and the spectrum analyzer:
+    - 27.1 MHz Frequency (center freq for the spec. analyzer)
+    - a -30 dBm amplitude on both
+    - 100kHz span for the spectrum analyzer
+    - These settings on these two devices are meant to ensure the 
+        - integretity of the signal being sent out to the oscilloscope
+
+steps 5-6:
+    - Using the tm4c microcontroller, we will create a circuit using DACs
+        - to simulate the waveform generator to pass signals into the signal generator
+
+step 7-12:
+    - Using the microcontroller and our circuit, code will be required to 
+        - generate signal outputs that the signal generator will read (replacing the waveform generator)
+    - The expected outcome from here should be similar to the first 4 steps.
+

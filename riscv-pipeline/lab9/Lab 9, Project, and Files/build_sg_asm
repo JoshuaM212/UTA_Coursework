@@ -1,0 +1,5 @@
+riscv32-unknown-elf-gcc -o stop_go -march=rv32i -mabi=ilp32 -nostdlib -Tcse4372_riscv.ld stop_go.s
+objcopy -O ihex stop_go stop_go.hex
+hex_intel_to_quartis stop_go.hex ../cpu_spring_2023/db/ram.hex
+riscv32-unknown-elf-objdump -dr stop_go
+
